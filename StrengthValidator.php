@@ -215,7 +215,7 @@ class StrengthValidator extends \yii\validators\Validator
             'int' => true
         ],
         self::RULE_NUM => [
-            'msg' => '{attribute} should contain at least {n, plural, one{one numeric / digit character} other{# numeric / digit characters}} ({found} found)!',
+            'msg' => '{attribute} should contain at least {n, plural, one{one numeric character} other{# numeric characters}} ({found} found)!',
             'match' => '![\d]!',
             'int' => true
         ],

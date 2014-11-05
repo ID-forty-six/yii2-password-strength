@@ -93,7 +93,7 @@ class PasswordInput extends \nenad\InputWidget
     {
         $view = $this->getView();
         $locale = "js/locales/strength-meter-{$this->language}.js";
-        $path = Yii::getAlias("@vendor/kartik-v/strength-meter/{$locale}");
+        $path = Yii::getAlias("@vendor/nenad/yii2-strength-meter/{$locale}");
         if (!empty($this->language) && file_exists($path)) {
             PasswordInputAsset::register($view)->js[] = $locale;
         } else {

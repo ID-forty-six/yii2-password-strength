@@ -19,7 +19,7 @@ class PasswordInputAsset extends \nenad\AssetBundle
 
     public function init()
     {
-        $this->setSourcePath('@vendor/kartik-v/strength-meter');
+        $this->setSourcePath('@vendor/nenad/yii2-strength-meter');
         $this->setupAssets('css', ['css/strength-meter']);
         $this->setupAssets('js', ['js/strength-meter', 'js/strength-meter-effect']);
         parent::init();

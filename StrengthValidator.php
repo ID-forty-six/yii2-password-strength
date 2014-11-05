@@ -6,12 +6,12 @@
  * @version 1.2.0
  */
 
-namespace kartik\password;
+namespace nenad\passwordStrength;
 
-use Yii;
 use yii\base\InvalidConfigException;
 use yii\helpers\Html;
 use yii\helpers\Json;
+use Yii;
 
 /**
  * StrengthValidator validates if the attribute value matches a specified

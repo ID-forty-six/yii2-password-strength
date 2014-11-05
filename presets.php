@@ -6,7 +6,7 @@
  * @version 1.2.0
  */
 
-namespace kartik\password;
+namespace nenad\passwordStrength;
 
 return [
     StrengthValidator::SIMPLE => [

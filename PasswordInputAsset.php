@@ -6,7 +6,7 @@
  * @version 1.2.0
  */
 
-namespace kartik\password;
+namespace nenad\passwordStrength;
 
 /**
  * Asset bundle for PasswordInput Widget
@@ -14,14 +14,14 @@ namespace kartik\password;
  * @author Kartik Visweswaran <kartikv2@gmail.com>
  * @since 1.0
  */
-class PasswordInputAsset extends \kartik\widgets\AssetBundle
+class PasswordInputAsset extends \nenad\AssetBundle
 {
 
     public function init()
     {
         $this->setSourcePath('@vendor/kartik-v/strength-meter');
         $this->setupAssets('css', ['css/strength-meter']);
-        $this->setupAssets('js', ['js/strength-meter']);
+        $this->setupAssets('js', ['js/strength-meter', 'js/strength-meter-effect']);
         parent::init();
     }
 

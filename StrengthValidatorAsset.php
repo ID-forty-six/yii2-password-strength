@@ -6,7 +6,7 @@
  * @version 1.2.0
  */
 
-namespace kartik\password;
+namespace nenad\passwordStrength;
 
 /**
  * Asset bundle for StrengthValidator
@@ -14,7 +14,7 @@ namespace kartik\password;
  * @author Kartik Visweswaran <kartikv2@gmail.com>
  * @since 1.0
  */
-class StrengthValidatorAsset extends \kartik\widgets\AssetBundle
+class StrengthValidatorAsset extends \nenad\AssetBundle
 {
 
     public $depends = [

@@ -6,13 +6,13 @@
  * @version 1.2.0
  */
 
-namespace kartik\password;
+namespace nenad\passwordStrength;
 
-use Yii;
 use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\helpers\ArrayHelper;
 use yii\base\InvalidConfigException;
+use Yii;
 
 /**
  * PasswordInput widget is a wrapper for the JQuery Strength meter plugin by Krajee.
@@ -24,7 +24,7 @@ use yii\base\InvalidConfigException;
  * @since 1.0
  * @see http://plugins.krajee.com/strength-meter
  */
-class PasswordInput extends \kartik\widgets\InputWidget
+class PasswordInput extends \nenad\InputWidget
 {
 
     /**

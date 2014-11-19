@@ -1,18 +1,8 @@
 <?php
-
-/**
- * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014
- * @package yii2-password
- * @version 1.2.0
- */
-
 namespace nenad\passwordStrength;
 
 /**
  * Asset bundle for StrengthValidator
- *
- * @author Kartik Visweswaran <kartikv2@gmail.com>
- * @since 1.0
  */
 class StrengthValidatorAsset extends \nenad\AssetBundle
 {

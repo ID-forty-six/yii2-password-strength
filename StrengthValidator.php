@@ -1,11 +1,4 @@
 <?php
-
-/**
- * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014
- * @package yii2-password
- * @version 1.2.0
- */
-
 namespace nenad\passwordStrength;
 
 use yii\base\InvalidConfigException;
@@ -16,11 +9,6 @@ use Yii;
 /**
  * StrengthValidator validates if the attribute value matches a specified
  * set of password strength rules. It builds over the Yii StringValidator.
- *
- * @see yii\validators\StringValidator
- *
- * @author Kartik Visweswaran <kartikv2@gmail.com>
- * @since 1.0
  */
 class StrengthValidator extends \yii\validators\Validator
 {

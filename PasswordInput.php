@@ -1,11 +1,4 @@
 <?php
-
-/**
- * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014
- * @package yii2-password
- * @version 1.2.0
- */
-
 namespace nenad\passwordStrength;
 
 use yii\helpers\Html;
@@ -19,10 +12,6 @@ use Yii;
  * The plugin converts a password input into a widget with an advanced strength
  * validation meter and toggle mask to show/hide the password. The password strength
  * is validated as you type.
- *
- * @author Kartik Visweswaran <kartikv2@gmail.com>
- * @since 1.0
- * @see http://plugins.krajee.com/strength-meter
  */
 class PasswordInput extends \nenad\InputWidget
 {

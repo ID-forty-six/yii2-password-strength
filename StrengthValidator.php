@@ -12,7 +12,7 @@ use Yii;
  */
 class StrengthValidator extends \yii\validators\Validator
 {
-    /* The valid preset constants */
+    //-- The valid preset constants --//
 
     const SIMPLE = 'simple';
     const NORMAL = 'normal';
@@ -20,7 +20,7 @@ class StrengthValidator extends \yii\validators\Validator
     const MEDIUM = 'medium';
     const STRONG = 'strong';
 
-    /* The available rule constants */
+    //-- The available rule constants --//
     const RULE_MIN = 'min';
     const RULE_MAX = 'max';
     const RULE_LEN = 'length';
@@ -219,6 +219,7 @@ class StrengthValidator extends \yii\validators\Validator
      */
     public function init()
     {
+        parent::init();
         Yii::setAlias('@pwdstrength', dirname(__FILE__));
         if (empty($this->i18n)) {
             $this->i18n = [
@@ -257,14 +258,13 @@ class StrengthValidator extends \yii\validators\Validator
      */
     protected function applyPreset()
     {
-        if (!$this->preset) {
+        if (!isset($this->preset)) {
             return;
         }
         if (!isset($this->presetsSource)) {
             $this->presetsSource = __DIR__ . '/presets.php';
         }
         $this->_presets = require($this->presetsSource);
-
         if (array_key_exists($this->preset, $this->_presets)) {
             foreach ($this->_presets[$this->preset] As $param => $value) {
                 $this->$param = $value;
@@ -278,7 +278,7 @@ class StrengthValidator extends \yii\validators\Validator
      * Validates the provided parameters for valid data type
      * and the right threshold for 'max' chars.
      *
-     * @throw InvalidConfigException if validation is invalid
+     * @throws InvalidConfigException if validation is invalid
      */
     protected function checkParams()
     {
@@ -318,7 +318,6 @@ class StrengthValidator extends \yii\validators\Validator
         $label = $object->getAttributeLabel($attribute);
         $username = $object[$this->userAttribute];
         $temp = [];
-
         foreach (self::$_rules as $rule => $setup) {
             $param = "{$rule}Error";
             if ($rule === self::RULE_USER && $this->hasUser && strpos($value, $username) > 0) {
@@ -336,7 +335,6 @@ class StrengthValidator extends \yii\validators\Validator
             } else {
                 $length = strlen($value);
                 $test = false;
-
                 if ($rule === self::RULE_LEN) {
                     $test = ($length !== $this->$rule);
                 } elseif ($rule === self::RULE_MIN) {
@@ -344,7 +342,6 @@ class StrengthValidator extends \yii\validators\Validator
                 } elseif ($rule === self::RULE_MAX) {
                     $test = ($length > $this->$rule);
                 }
-
                 if ($this->$rule !== null && $test) {
                     $this->addError($object, $attribute, $this->$param, [
                         'attribute' => $label . ' (' . $rule . ' , ' . $this->$rule . ')',
@@ -358,17 +355,16 @@ class StrengthValidator extends \yii\validators\Validator
     /**
      * Client validation
      *
-     * @param Model $object
+     * @param Model $model
      * @param string $attribute
      * @param View $view
      * @return string javascript method
      */
-    public function clientValidateAttribute($object, $attribute, $view)
+    public function clientValidateAttribute($model, $attribute, $view)
     {
-        $label = $object->getAttributeLabel($attribute);
+        $label = $model->getAttributeLabel($attribute);
         $options = ['strError' => Html::encode(Yii::t('pwdstrength', $this->message, ['attribute' => $label]))];
-        $options['userField'] = '#' . Html::getInputId($object, $this->userAttribute);
-
+        $options['userField'] = '#' . Html::getInputId($model, $this->userAttribute);
         foreach (self::$_rules as $rule => $setup) {
             $param = "{$rule}Error";
             if ($this->$rule !== null) {
@@ -377,7 +373,6 @@ class StrengthValidator extends \yii\validators\Validator
             }
         }
         StrengthValidatorAsset::register($view);
-        return "checkStrength(value, messages, " . Json::encode($options) . ");";
+        return "kvStrengthValidator.validate(value, messages, " . Json::encode($options) . ");";
     }
-
 }

@@ -6,7 +6,6 @@ namespace nenad\passwordStrength;
  */
 class PasswordInputAsset extends \nenad\AssetBundle
 {
-
     public function init()
     {
         $this->setSourcePath('@vendor/nenad/yii2-strength-meter');
@@ -14,5 +13,4 @@ class PasswordInputAsset extends \nenad\AssetBundle
         $this->setupAssets('js', ['js/strength-meter']);
         parent::init();
     }
-
 }

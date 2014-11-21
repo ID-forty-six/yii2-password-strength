@@ -6,7 +6,6 @@ namespace nenad\passwordStrength;
  */
 class StrengthValidatorAsset extends \nenad\AssetBundle
 {
-
     public $depends = [
         'yii\web\JqueryAsset'
     ];
@@ -17,5 +16,4 @@ class StrengthValidatorAsset extends \nenad\AssetBundle
         $this->setupAssets('js', ['js/strength-validation']);
         parent::init();
     }
-
 }

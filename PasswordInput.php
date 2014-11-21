@@ -15,7 +15,6 @@ use Yii;
  */
 class PasswordInput extends \nenad\InputWidget
 {
-
     /**
      * @var string the password strength meter language. If not provided or
      * no translation is available, this will default to `en` (US English).

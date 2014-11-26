@@ -1,11 +1,4 @@
 <?php
-
-/**
- * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014
- * @package yii2-password
- * @version 1.2.0
- */
-
 namespace nenad\passwordStrength;
 
 return [
@@ -53,6 +46,17 @@ return [
         'special' => 2,
         'hasUser' => true,
         'hasEmail' => true
+    ],
+    // this rule is used for password reset because 
+    // it does not require 'hasUser' and 'hasEmail' validations
+    StrengthValidator::RESET => [
+        'min' => 8,
+        'upper' => 1,
+        'lower' => 1,
+        'digit' => 1,
+        'special' => 0,
+        'hasUser' => false,
+        'hasEmail' => false
     ],
 ];
 ?>

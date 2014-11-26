@@ -16,20 +16,21 @@ class StrengthValidator extends \yii\validators\Validator
 
     const SIMPLE = 'simple';
     const NORMAL = 'normal';
-    const FAIR = 'fair';
+    const FAIR   = 'fair';
     const MEDIUM = 'medium';
     const STRONG = 'strong';
+    const RESET  = 'reset'; // used for password reset
 
     //-- The available rule constants --//
-    const RULE_MIN = 'min';
-    const RULE_MAX = 'max';
-    const RULE_LEN = 'length';
-    const RULE_USER = 'hasUser';
+    const RULE_MIN   = 'min';
+    const RULE_MAX   = 'max';
+    const RULE_LEN   = 'length';
+    const RULE_USER  = 'hasUser';
     const RULE_EMAIL = 'hasEmail';
-    const RULE_LOW = 'lower';
-    const RULE_UP = 'upper';
-    const RULE_NUM = 'digit';
-    const RULE_SPL = 'special';
+    const RULE_LOW   = 'lower';
+    const RULE_UP    = 'upper';
+    const RULE_NUM   = 'digit';
+    const RULE_SPL   = 'special';
 
     /**
      * @var boolean check whether password contains the username

@@ -169,47 +169,56 @@ class StrengthValidator extends \yii\validators\Validator
     private $_presets;
 
     /**
-     * @var array the default rule settings
-     */
+      * @var array the default rule settings
+    */
     private static $_rules = [
+
         self::RULE_MIN => [
-            'msg' => '{attribute} should contain at least {n, plural, one{one character} other{# characters}} ({found})',
+            'msg' => '{attribute} should contain at least {n, plural, one{one character} other{# characters}} ({found} found)!',
             'int' => true
         ],
+
         self::RULE_MAX => [
-            'msg' => '{attribute} should contain at most {n, plural, one{one character} other{# characters}} ({found})',
+            'msg' => '{attribute} should contain at most {n, plural, one{one character} other{# characters}} ({found} found)!',
             'int' => true
         ],
+
         self::RULE_LEN => [
-            'msg' => '{attribute} should contain exactly {n, plural, one{one character} other{# characters}} ({found})',
+            'msg' => '{attribute} should contain exactly {n, plural, one{one character} other{# characters}} ({found} found)!',
             'int' => true
         ],
+
         self::RULE_USER => [
             'msg' => '{attribute} cannot contain the username',
             'bool' => true
         ],
+
         self::RULE_EMAIL => [
             'msg' => '{attribute} cannot contain an email address',
             'match' => '/^([\w\!\#$\%\&\'\*\+\-\/\=\?\^\`{\|\}\~]+\.)*[\w\!\#$\%\&\'\*\+\-\/\=\?\^\`{\|\}\~]+@((((([a-z0-9]{1}[a-z0-9\-]{0,62}[a-z0-9]{1})|[a-z])\.)+[a-z]{2,6})|(\d{1,3}\.){3}\d{1,3}(\:\d{1,5})?)$/i',
             'bool' => true
         ],
+
         self::RULE_LOW => [
-            'msg' => '{attribute} should contain at least {n, plural, one{one lower case character} other{# lower case characters}} ({found})',
+            'msg' => '{attribute} should contain at least {n, plural, one{one lower case character} other{# lower case characters}} ({found} found)!',
             'match' => '![a-z]!',
             'int' => true
         ],
+
         self::RULE_UP => [
-            'msg' => '{attribute} should contain at least {n, plural, one{one upper case character} other{# upper case characters}} ({found})',
+            'msg' => '{attribute} should contain at least {n, plural, one{one upper case character} other{# upper case characters}} ({found} found)!',
             'match' => '![A-Z]!',
             'int' => true
         ],
+
         self::RULE_NUM => [
-            'msg' => '{attribute} should contain at least {n, plural, one{one numeric character} other{# numeric characters}} ({found})',
+            'msg' => '{attribute} should contain at least {n, plural, one{one numeric character} other{# numeric characters}} ({found} found)!',
             'match' => '![\d]!',
             'int' => true
         ],
+
         self::RULE_SPL => [
-            'msg' => '{attribute} should contain at least {n, plural, one{one special character} other{# special characters}} ({found})',
+            'msg' => '{attribute} should contain at least {n, plural, one{one special character} other{# special characters}} ({found} found)!',
             'match' => '![\W]!',
             'int' => true
         ]

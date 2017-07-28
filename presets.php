@@ -13,9 +13,9 @@ return [
     ],
     StrengthValidator::NORMAL => [
         'min' => 8,
-        'upper' => 1,
-        'lower' => 1,
-        'digit' => 1,
+        'upper' => 0,
+        'lower' => 0,
+        'digit' => 0,
         'special' => 0,
         'hasUser' => true,
         'hasEmail' => true
@@ -51,12 +51,11 @@ return [
     // it does not require 'hasUser' and 'hasEmail' validations
     StrengthValidator::RESET => [
         'min' => 8,
-        'upper' => 1,
-        'lower' => 1,
-        'digit' => 1,
+        'upper' => 0,
+        'lower' => 0,
+        'digit' => 0,
         'special' => 0,
         'hasUser' => false,
         'hasEmail' => false
     ],
 ];
-?>

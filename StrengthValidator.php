@@ -233,8 +233,14 @@ class StrengthValidator extends \yii\validators\Validator
         Yii::setAlias('@pwdstrength', dirname(__FILE__));
         if (empty($this->i18n)) {
             $this->i18n = [
-                'class' => 'yii\i18n\PhpMessageSource',
-                'basePath' => '@pwdstrength/messages'
+                //'class' => 'yii\i18n\PhpMessageSource',
+                //'basePath' => '@pwdstrength/messages',
+                'class' => 'yii\i18n\DbMessageSource',
+                'sourceLanguage' => 'en-US', // Developer language
+                'sourceMessageTable' => '{{%language_source}}',
+                'messageTable' => '{{%language_translate}}',
+                'cachingDuration' => Yii::$app->params['langcash'],
+                'enableCaching' => true,
             ];
         }
         Yii::$app->i18n->translations['pwdstrength'] = $this->i18n;

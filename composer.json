@@ -1,11 +1,15 @@
 {
-	"name": "nenad/yii2-password-strength",
+	"name": "id-forty-six/yii2-password-strength",
 	"description": "Password strength validation utilities for Yii2 application templates created by Nenad Z.",
 	"keywords": ["yii", "yii2", "extension", "password", "strength", "auth", "input", "form", "bootstrap", "jquery"],
 	"homepage": "https://github.com/nenad-zivkovic/yii2-password-strength",
 	"type": "yii2-extension",
 	"license": "BSD 3-Clause",
 	"authors": [
+        {
+            "name": "ID Forty Six",
+            "homepage": "https://sendinn.com"
+        },
 		{
             "name": "Kartik Visweswaran",
 			"email": "kartikv2@gmail.com",
